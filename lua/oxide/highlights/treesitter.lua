@@ -34,12 +34,12 @@ function M.setup(colors, config)
 
 		-- Functions
 		["@function"] = { link = "Function" },
-		["@function.builtin"] = { fg = c.sapphire },
-		["@function.macro"] = { fg = c.sapphire },
-		["@function.call"] = { fg = c.sapphire },
-		["@method"] = { fg = c.sapphire },
-		["@method.call"] = { fg = c.sapphire },
-		["@constructor"] = { fg = c.sapphire },
+		["@function.builtin"] = { fg = c.red },
+		["@function.macro"] = { fg = c.red },
+		["@function.call"] = { fg = c.red },
+		["@method"] = { fg = c.red },
+		["@method.call"] = { fg = c.red },
+		["@constructor"] = { fg = c.red },
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" },

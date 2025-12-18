@@ -22,7 +22,7 @@ function M.setup(colors, config)
 
 		-- Identifiers (your blue variables!)
 		Identifier = vim.tbl_extend("force", { fg = c.blue }, styles.variables or {}),
-		Function = vim.tbl_extend("force", { fg = c.sapphire }, styles.functions or {}),
+		Function = vim.tbl_extend("force", { fg = c.red }, styles.functions or {}),
 
 		-- Statements
 		Statement = { fg = c.lavender },
