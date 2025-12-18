@@ -1,11 +1,11 @@
--- TreeSitter highlighting groups
+-- TreeSitter highlighting groups - Direct semantic colors
 local M = {}
 
 ---@param colors table
 ---@param config table
 ---@return table
 function M.setup(colors, config)
-	local theme = colors.theme
+	local c = colors.colors
 
 	return {
 		-- Comments
@@ -13,94 +13,86 @@ function M.setup(colors, config)
 
 		-- Constants
 		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { fg = theme.syn.constant },
+		["@constant.builtin"] = { fg = c.orange },
 		["@constant.macro"] = { link = "Macro" },
-		--
-		-- -- Strings and characters
+
+		-- Strings and characters
 		["@string"] = { link = "String" },
-		["@string.regex"] = { fg = theme.syn.special },
-		["@string.escape"] = { fg = theme.syn.special },
+		["@string.special"] = { fg = c.pink },
 		["@character"] = { link = "Character" },
-		["@character.special"] = { link = "SpecialChar" },
-		--
-		-- -- Numbers and booleans
 		["@number"] = { link = "Number" },
-		["@number.float"] = { link = "Float" },
 		["@boolean"] = { link = "Boolean" },
-		--
+		["@float"] = { link = "Float" },
+
+		-- Identifiers and variables (your blue variables!)
+		["@variable"] = { fg = c.blue },
+		["@variable.builtin"] = { fg = c.blue },
+		["@variable.parameter"] = { fg = c.blue },
+		["@variable.member"] = { fg = c.blue },
+		["@property"] = { fg = c.blue },
+		["@field"] = { fg = c.blue },
+
 		-- Functions
 		["@function"] = { link = "Function" },
-		-- ["@function.builtin"] = { fg = theme.syn.function_name },
-		-- ["@function.call"] = { link = "Function" },
-		-- ["@function.macro"] = { link = "Macro" },
-		["@function.method"] = { link = "Function" },
-		-- ["@method"] = { link = "Function" },
-		-- ["@method.call"] = { link = "Function" },
-		["@constructor"] = { fg = theme.syn.type },
-		--
-		-- -- Keywords and operators
+		["@function.builtin"] = { fg = c.sapphire },
+		["@function.macro"] = { fg = c.sapphire },
+		["@function.call"] = { fg = c.sapphire },
+		["@method"] = { fg = c.sapphire },
+		["@method.call"] = { fg = c.sapphire },
+		["@constructor"] = { fg = c.sapphire },
+
+		-- Keywords
 		["@keyword"] = { link = "Keyword" },
-		-- ["@keyword.function"] = { link = "Keyword" },
-		-- ["@keyword.operator"] = { link = "Keyword" },
-		-- ["@keyword.return"] = { link = "Keyword" },
-		-- ["@keyword.conditional"] = { link = "Conditional" },
-		-- ["@keyword.repeat"] = { link = "Repeat" },
-		-- ["@keyword.exception"] = { link = "Exception" },
+		["@keyword.function"] = { fg = c.lavender },
+		["@keyword.return"] = { fg = c.lavender },
+		["@keyword.operator"] = { fg = c.lavender },
+		["@conditional"] = { link = "Conditional" },
+		["@repeat"] = { link = "Repeat" },
+		["@exception"] = { link = "Exception" },
+
+		-- Operators
 		["@operator"] = { link = "Operator" },
-		--
-		-- Variables and identifiers
-		["@variable"] = { link = "Variable" },
-		-- ["@variable.builtin"] = { fg = theme.syn.special },
-		["@variable.parameter"] = { link = "Parameter" },
-		-- ["@variable.member"] = { link = "Field" },
 
 		-- Types
 		["@type"] = { link = "Type" },
-		-- ["@type.builtin"] = { fg = theme.syn.type },
-		["@type.definition"] = { link = "Typedef" },
+		["@type.builtin"] = { fg = c.sky },
+		["@type.definition"] = { fg = c.sky },
+		["@storageclass"] = { link = "StorageClass" },
+		["@structure"] = { link = "Structure" },
 
-		-- Fields and properties
-		-- ["@field"] = { link = "Field" },
-		["@property"] = { link = "Property" },
-		["@attribute"] = { link = "PreProc" },
-		--
-		-- -- Punctuation
-		["@punctuation.delimiter"] = { link = "Delimiter" },
-		["@punctuation.bracket"] = { fg = theme.ui.fg },
-		["@punctuation.special"] = { link = "Special" },
-		--
-		-- -- Tags (HTML, XML, etc.)
-		-- ["@tag"] = { fg = theme.syn.keyword },
-		-- ["@tag.attribute"] = { fg = theme.syn.identifier },
-		-- ["@tag.delimiter"] = { fg = theme.ui.fg },
-		--
-		-- -- Labels
-		-- ["@label"] = { link = "Label" },
-		--
-		-- Includes and namespaces
-		-- ["@include"] = { link = "Include" },
-		["@module"] = { fg = theme.syn.type },
-		--
-		-- Special cases
-		["@warning"] = { fg = theme.syn.warning },
-		["@danger"] = { fg = theme.syn.error },
-		["@note"] = { fg = theme.syn.info },
-		--
-		-- Markup (markdown, etc.)
+		-- Preprocessor
+		["@preproc"] = { link = "PreProc" },
+		["@include"] = { link = "Include" },
+		["@define"] = { link = "Define" },
+
+		-- Special
+		["@special"] = { link = "Special" },
+		["@tag"] = { fg = c.pink },
+		["@tag.attribute"] = { fg = c.teal },
+		["@tag.delimiter"] = { fg = c.text },
+
+		-- Punctuation
+		["@punctuation.delimiter"] = { fg = c.text },
+		["@punctuation.bracket"] = { fg = c.text },
+		["@punctuation.special"] = { fg = c.pink },
+
+		-- Literals
+		["@string.regex"] = { fg = c.teal },
+		["@string.escape"] = { fg = c.pink },
+
+		-- Markup (Markdown, etc.)
 		["@markup.strong"] = { bold = true },
 		["@markup.italic"] = { italic = true },
 		["@markup.underline"] = { underline = true },
-		["@markup.strike"] = { strikethrough = true },
-		["@markup.heading"] = { fg = theme.syn.function_name, bold = true },
-		["@markup.link"] = { fg = theme.syn.info, underline = true },
-		["@markup.link.url"] = { fg = theme.syn.special, underline = true },
-		["@markup.raw"] = { fg = theme.syn.string },
-		["@markup.list"] = { fg = theme.syn.keyword },
+		["@markup.strikethrough"] = { strikethrough = true },
+		["@markup.heading"] = { fg = c.sapphire, bold = true },
+		["@markup.link"] = { fg = c.sky },
+		["@markup.link.url"] = { fg = c.teal, underline = true },
+		["@markup.list"] = { fg = c.lavender },
 
-		-- Diff
-		["@diff.plus"] = { fg = theme.git.add },
-		["@diff.minus"] = { fg = theme.git.delete },
-		["@diff.delta"] = { fg = theme.git.change },
+		-- Errors
+		["@error"] = { link = "Error" },
+		["@warning"] = { fg = c.orange },
 	}
 end
 

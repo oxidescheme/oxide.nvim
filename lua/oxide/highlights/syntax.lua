@@ -5,64 +5,64 @@ local M = {}
 ---@param config table
 ---@return table
 function M.setup(colors, config)
-	local theme = colors.theme
+	local c = colors.colors
 	local styles = config.styles or {}
 
 	return {
 		-- Comments
-		Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, styles.comments or {}),
+		Comment = vim.tbl_extend("force", { fg = c.overlay0 }, styles.comments or {}),
 
 		-- Constants
-		Constant = { fg = theme.syn.constant },
-		String = vim.tbl_extend("force", { fg = theme.syn.string }, styles.strings or {}),
-		Character = { fg = theme.syn.string },
-		Number = vim.tbl_extend("force", { fg = theme.syn.number }, styles.numbers or {}),
-		Boolean = vim.tbl_extend("force", { fg = theme.syn.boolean }, styles.booleans or {}),
-		Float = { fg = theme.syn.number },
+		Constant = { fg = c.orange },
+		String = vim.tbl_extend("force", { fg = c.green }, styles.strings or {}),
+		Character = { fg = c.green },
+		Number = vim.tbl_extend("force", { fg = c.orange }, styles.numbers or {}),
+		Boolean = vim.tbl_extend("force", { fg = c.orange }, styles.booleans or {}),
+		Float = { fg = c.orange },
 
-		-- Identifiers
-		Identifier = vim.tbl_extend("force", { fg = theme.syn.identifier }, styles.variables or {}),
-		Function = vim.tbl_extend("force", { fg = theme.syn.function_name }, styles.functions or {}),
+		-- Identifiers (your blue variables!)
+		Identifier = vim.tbl_extend("force", { fg = c.blue }, styles.variables or {}),
+		Function = vim.tbl_extend("force", { fg = c.sapphire }, styles.functions or {}),
 
 		-- Statements
-		Statement = { fg = theme.syn.keyword },
-		Conditional = vim.tbl_extend("force", { fg = theme.syn.keyword }, styles.keywords or {}),
-		Repeat = vim.tbl_extend("force", { fg = theme.syn.keyword }, styles.keywords or {}),
-		Label = { fg = theme.syn.keyword },
-		Operator = { fg = theme.syn.operator },
-		Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, styles.keywords or {}),
-		Exception = { fg = theme.syn.keyword },
+		Statement = { fg = c.lavender },
+		Conditional = vim.tbl_extend("force", { fg = c.lavender }, styles.keywords or {}),
+		Repeat = vim.tbl_extend("force", { fg = c.lavender }, styles.keywords or {}),
+		Label = { fg = c.lavender },
+		Operator = { fg = c.mauve },
+		Keyword = vim.tbl_extend("force", { fg = c.lavender }, styles.keywords or {}),
+		Exception = { fg = c.lavender },
 
-		-- PreProcessor
-		PreProc = { fg = theme.syn.preproc },
-		Include = { fg = theme.syn.preproc },
-		Define = { fg = theme.syn.preproc },
-		Macro = { fg = theme.syn.preproc },
-		PreCondit = { fg = theme.syn.preproc },
+		-- Preproc
+		PreProc = { fg = c.teal },
+		Include = { fg = c.teal },
+		Define = { fg = c.teal },
+		Macro = { fg = c.teal },
+		PreCondit = { fg = c.teal },
 
-		-- Type
-		Type = { fg = theme.syn.type },
-		StorageClass = { fg = theme.syn.keyword },
-		Structure = { fg = theme.syn.type },
-		Typedef = { fg = theme.syn.type },
+		-- Types
+		Type = { fg = c.sky },
+		StorageClass = { fg = c.lavender },
+		Structure = { fg = c.sky },
+		Typedef = { fg = c.sky },
 
 		-- Special
-		Special = { fg = theme.syn.special },
-		SpecialChar = { fg = theme.syn.special },
-		Tag = { fg = theme.syn.special },
-		Delimiter = { fg = theme.ui.fg },
-		SpecialComment = { fg = theme.syn.special },
-		Debug = { fg = theme.syn.special },
+		Special = { fg = c.text },
+		SpecialChar = { fg = c.pink },
+		Tag = { fg = c.pink },
+		Delimiter = { fg = c.text },
+		SpecialComment = { fg = c.overlay1 },
+		Debug = { fg = c.pink },
 
-		-- Errors and todos
-		Error = { fg = theme.syn.error },
-		Todo = { fg = theme.syn.warning, bold = true },
+		-- Error
+		Error = { fg = c.red },
+		Todo = { fg = c.yellow, bold = true },
 
 		-- Added for better syntax support
-		Variable = vim.tbl_extend("force", { fg = theme.syn.identifier }, styles.variables or {}),
-		Field = { fg = theme.syn.identifier },
-		Property = { fg = theme.syn.property },
-		Parameter = { fg = theme.syn.identifier },
+		Variable = vim.tbl_extend("force", { fg = c.blue }, styles.variables or {}),
+		Field = { fg = c.blue },
+		Property = { fg = c.blue },
+		Parameter = { fg = c.blue },
 	}
 end
 

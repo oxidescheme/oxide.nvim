@@ -1,11 +1,11 @@
--- LSP and diagnostic highlighting groups
+-- LSP and diagnostic highlighting groups - Direct semantic colors
 local M = {}
 
 ---@param colors table
 ---@param config table
 ---@return table
 function M.setup(colors, config)
-  local theme = colors.theme
+  local c = colors.colors
 
   local highlights = {
     -- LSP semantic tokens
@@ -18,52 +18,50 @@ function M.setup(colors, config)
     ["@lsp.type.macro"] = { link = "@constant.macro" },
     ["@lsp.type.method"] = { link = "@function.method" },
     ["@lsp.type.namespace"] = { link = "@module" },
-    ["@lsp.type.parameter"] = { link = "@variable.parameter" },
-    ["@lsp.type.property"] = { link = "@property" },
+    ["@lsp.type.parameter"] = { fg = c.blue },
+    ["@lsp.type.property"] = { fg = c.blue },
     ["@lsp.type.struct"] = { link = "@type" },
     ["@lsp.type.type"] = { link = "@type" },
-    ["@lsp.type.typeParameter"] = { link = "@type.definition" },
-    ["@lsp.type.variable"] = { link = "@variable" },
+    ["@lsp.type.typeParameter"] = { link = "@type" },
+    ["@lsp.type.variable"] = { fg = c.blue },
 
-    -- Diagnostics
-    DiagnosticError = { fg = theme.diag.error },
-    DiagnosticWarn = { fg = theme.diag.warning },
-    DiagnosticInfo = { fg = theme.diag.info },
-    DiagnosticHint = { fg = theme.diag.hint },
-    DiagnosticOk = { fg = theme.diag.ok },
+    -- LSP semantic token modifiers
+    ["@lsp.mod.readonly"] = { fg = c.sky },
+    ["@lsp.mod.static"] = { fg = c.lavender },
+    ["@lsp.mod.deprecated"] = { fg = c.pink, strikethrough = true },
 
-    -- Diagnostic virtual text
-    DiagnosticVirtualTextError = { fg = theme.diag.error, bg = theme.ui.bg },
-    DiagnosticVirtualTextWarn = { fg = theme.diag.warning, bg = theme.ui.bg },
-    DiagnosticVirtualTextInfo = { fg = theme.diag.info, bg = theme.ui.bg },
-    DiagnosticVirtualTextHint = { fg = theme.diag.hint, bg = theme.ui.bg },
+    -- Diagnostic highlights
+    DiagnosticError = { fg = c.red },
+    DiagnosticWarn = { fg = c.orange },
+    DiagnosticInfo = { fg = c.sapphire },
+    DiagnosticHint = { fg = c.teal },
 
     -- Diagnostic underlines
-    DiagnosticUnderlineError = { sp = theme.diag.error, undercurl = true },
-    DiagnosticUnderlineWarn = { sp = theme.diag.warning, undercurl = true },
-    DiagnosticUnderlineInfo = { sp = theme.diag.info, undercurl = true },
-    DiagnosticUnderlineHint = { sp = theme.diag.hint, undercurl = true },
+    DiagnosticUnderlineError = { sp = c.red, undercurl = true },
+    DiagnosticUnderlineWarn = { sp = c.orange, undercurl = true },
+    DiagnosticUnderlineInfo = { sp = c.sapphire, undercurl = true },
+    DiagnosticUnderlineHint = { sp = c.teal, undercurl = true },
 
-    -- Diagnostic signs (gutter)
-    DiagnosticSignError = { fg = theme.diag.error },
-    DiagnosticSignWarn = { fg = theme.diag.warning },
-    DiagnosticSignInfo = { fg = theme.diag.info },
-    DiagnosticSignHint = { fg = theme.diag.hint },
+    -- Diagnostic virtual text
+    DiagnosticVirtualTextError = { fg = c.red, bg = "NONE" },
+    DiagnosticVirtualTextWarn = { fg = c.orange, bg = "NONE" },
+    DiagnosticVirtualTextInfo = { fg = c.sapphire, bg = "NONE" },
+    DiagnosticVirtualTextHint = { fg = c.teal, bg = "NONE" },
 
     -- LSP references
-    LspReferenceText = { bg = theme.ui.selection },
-    LspReferenceRead = { bg = theme.ui.selection },
-    LspReferenceWrite = { bg = theme.ui.selection },
+    LspReferenceText = { bg = c.surface1 },
+    LspReferenceRead = { bg = c.surface1 },
+    LspReferenceWrite = { bg = c.surface1 },
 
-    -- LSP hover and signature help
-    LspSignatureActiveParameter = { fg = theme.syn.warning, bold = true },
+    -- LSP signature help
+    LspSignatureActiveParameter = { fg = c.orange, bold = true },
 
-    -- Code lens
-    LspCodeLens = { fg = theme.syn.comment },
-    LspCodeLensSeparator = { fg = theme.syn.comment },
+    -- LSP code lens
+    LspCodeLens = { fg = c.overlay1 },
+    LspCodeLensSeparator = { fg = c.overlay0 },
 
-    -- Inlay hints
-    LspInlayHint = { fg = theme.syn.hint, bg = theme.ui.bg_light },
+    -- LSP inlay hints
+    LspInlayHint = { fg = c.overlay1, bg = c.surface0 },
   }
 
   return highlights

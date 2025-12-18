@@ -7,6 +7,9 @@ local syntax = require("oxide.highlights.syntax")
 local treesitter = require("oxide.highlights.treesitter")
 local lsp = require("oxide.highlights.lsp")
 
+-- Import integrations
+local snacks = require("oxide.highlights.integrations.snacks")
+
 ---@param colors table
 ---@param config table
 ---@return table
@@ -19,25 +22,28 @@ function M.setup(colors, config)
   highlights = vim.tbl_extend("force", highlights, treesitter.setup(colors, config))
   highlights = vim.tbl_extend("force", highlights, lsp.setup(colors, config))
 
-  -- Terminal colors
+  -- Merge integrations
+  highlights = vim.tbl_extend("force", highlights, snacks.setup(colors, config))
+
+  -- Terminal colors (using direct semantic colors)
   if config.terminal_colors then
-    local theme = colors.theme
-    vim.g.terminal_color_0 = theme.ui.bg_dark
-    vim.g.terminal_color_1 = theme.diag.error
-    vim.g.terminal_color_2 = theme.git.add
-    vim.g.terminal_color_3 = theme.diag.warning
-    vim.g.terminal_color_4 = theme.syn.function_name
-    vim.g.terminal_color_5 = theme.syn.special
-    vim.g.terminal_color_6 = theme.syn.info
-    vim.g.terminal_color_7 = theme.ui.fg
-    vim.g.terminal_color_8 = theme.ui.fg_dark
-    vim.g.terminal_color_9 = theme.diag.error
-    vim.g.terminal_color_10 = theme.git.add
-    vim.g.terminal_color_11 = theme.diag.warning
-    vim.g.terminal_color_12 = theme.syn.function_name
-    vim.g.terminal_color_13 = theme.syn.special
-    vim.g.terminal_color_14 = theme.syn.info
-    vim.g.terminal_color_15 = theme.ui.fg_light
+    local c = colors.colors
+    vim.g.terminal_color_0 = c.base
+    vim.g.terminal_color_1 = c.red
+    vim.g.terminal_color_2 = c.green
+    vim.g.terminal_color_3 = c.orange
+    vim.g.terminal_color_4 = c.sapphire
+    vim.g.terminal_color_5 = c.lavender
+    vim.g.terminal_color_6 = c.teal
+    vim.g.terminal_color_7 = c.text
+    vim.g.terminal_color_8 = c.subtext1
+    vim.g.terminal_color_9 = c.red
+    vim.g.terminal_color_10 = c.green
+    vim.g.terminal_color_11 = c.orange
+    vim.g.terminal_color_12 = c.sapphire
+    vim.g.terminal_color_13 = c.lavender
+    vim.g.terminal_color_14 = c.teal
+    vim.g.terminal_color_15 = c.text
   end
 
   -- Apply user overrides
