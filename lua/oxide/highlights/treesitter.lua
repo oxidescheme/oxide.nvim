@@ -11,10 +11,10 @@ function M.setup(colors, config)
 		-- Comments
 		["@comment"] = { link = "Comment" },
 
-		-- -- Constants
-		-- ["@constant"] = { link = "Constant" },
-		-- ["@constant.builtin"] = { fg = theme.syn.constant },
-		-- ["@constant.macro"] = { link = "Macro" },
+		-- Constants
+		["@constant"] = { link = "Constant" },
+		["@constant.builtin"] = { fg = theme.syn.constant },
+		["@constant.macro"] = { link = "Macro" },
 		--
 		-- -- Strings and characters
 		["@string"] = { link = "String" },
@@ -28,44 +28,46 @@ function M.setup(colors, config)
 		["@number.float"] = { link = "Float" },
 		["@boolean"] = { link = "Boolean" },
 		--
-		-- -- Functions
-		-- ["@function"] = { link = "Function" },
+		-- Functions
+		["@function"] = { link = "Function" },
 		-- ["@function.builtin"] = { fg = theme.syn.function_name },
 		-- ["@function.call"] = { link = "Function" },
 		-- ["@function.macro"] = { link = "Macro" },
+		["@function.method"] = { link = "Function" },
 		-- ["@method"] = { link = "Function" },
 		-- ["@method.call"] = { link = "Function" },
-		-- ["@constructor"] = { fg = theme.syn.type },
+		["@constructor"] = { fg = theme.syn.type },
 		--
 		-- -- Keywords and operators
-		-- ["@keyword"] = { link = "Keyword" },
+		["@keyword"] = { link = "Keyword" },
 		-- ["@keyword.function"] = { link = "Keyword" },
 		-- ["@keyword.operator"] = { link = "Keyword" },
 		-- ["@keyword.return"] = { link = "Keyword" },
 		-- ["@keyword.conditional"] = { link = "Conditional" },
 		-- ["@keyword.repeat"] = { link = "Repeat" },
 		-- ["@keyword.exception"] = { link = "Exception" },
-		-- ["@operator"] = { link = "Operator" },
+		["@operator"] = { link = "Operator" },
 		--
-		-- -- Variables and identifiers
-		-- ["@variable"] = { link = "Variable" },
+		-- Variables and identifiers
+		["@variable"] = { link = "Variable" },
 		-- ["@variable.builtin"] = { fg = theme.syn.special },
-		-- ["@variable.parameter"] = { link = "Parameter" },
+		["@variable.parameter"] = { link = "Parameter" },
 		-- ["@variable.member"] = { link = "Field" },
-		--
-		-- -- Types
-		-- ["@type"] = { link = "Type" },
+
+		-- Types
+		["@type"] = { link = "Type" },
 		-- ["@type.builtin"] = { fg = theme.syn.type },
-		-- ["@type.definition"] = { link = "Typedef" },
-		--
-		-- -- Fields and properties
+		["@type.definition"] = { link = "Typedef" },
+
+		-- Fields and properties
 		-- ["@field"] = { link = "Field" },
-		-- ["@property"] = { link = "Property" },
+		["@property"] = { link = "Property" },
+		["@attribute"] = { link = "PreProc" },
 		--
 		-- -- Punctuation
-		-- ["@punctuation.delimiter"] = { link = "Delimiter" },
-		-- ["@punctuation.bracket"] = { fg = theme.ui.fg },
-		-- ["@punctuation.special"] = { link = "Special" },
+		["@punctuation.delimiter"] = { link = "Delimiter" },
+		["@punctuation.bracket"] = { fg = theme.ui.fg },
+		["@punctuation.special"] = { link = "Special" },
 		--
 		-- -- Tags (HTML, XML, etc.)
 		-- ["@tag"] = { fg = theme.syn.keyword },
@@ -75,15 +77,14 @@ function M.setup(colors, config)
 		-- -- Labels
 		-- ["@label"] = { link = "Label" },
 		--
-		-- -- Includes and namespaces
+		-- Includes and namespaces
 		-- ["@include"] = { link = "Include" },
-		-- ["@namespace"] = { fg = theme.syn.type },
+		["@module"] = { fg = theme.syn.type },
 		--
 		-- Special cases
-		-- ["@error"] = { link = "Error" },
-		-- ["@warning"] = { fg = theme.syn.warning },
-		-- ["@danger"] = { fg = theme.syn.error },
-		-- ["@note"] = { fg = theme.syn.info },
+		["@warning"] = { fg = theme.syn.warning },
+		["@danger"] = { fg = theme.syn.error },
+		["@note"] = { fg = theme.syn.info },
 		--
 		-- Markup (markdown, etc.)
 		["@markup.strong"] = { bold = true },

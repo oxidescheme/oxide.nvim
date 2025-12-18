@@ -144,11 +144,13 @@ require("oxide").setup({
 oxide uses a carefully crafted Base16-compliant palette with two variants. Because apparently having 16.7 million colors available wasn't overwhelming enough.
 
 ### Dark Variant
+
 - **Background**: `#141414` (void-like depth)
 - **Foreground**: `#e0e4e8` (crisp clarity)
 - **Accents**: Soft pastels that guide without overwhelming
 
 ### Light Variant  
+
 - **Background**: `#ffffff` (paper-like clarity)
 - **Foreground**: `#374151` (readable contrast)
 - **Accents**: Refined tones for high-ambient environments
@@ -161,7 +163,7 @@ oxide uses a carefully crafted Base16-compliant palette with two variants. Becau
 | **Foreground** | `#e0e4e8` | `#374151` | Main text |
 | **Red** | `#ff6370` | `#dc2626` | Errors, deletions |
 | **Orange** | `#ff9500` | `#ea580c` | Constants, attributes |
-| **Yellow** | `#1aa7ff` | `#d97706` | Classes, warnings |
+| **Ocean** | `#1aa7ff` | `#d97706` | Classes, warnings |
 | **Green** | `#42be65` | `#059669` | Strings, additions |
 | **Cyan** | `#08bdba` | `#0891b2` | Regex, escape chars |
 | **Blue** | `#33b1ff` | `#0369a1` | Functions, methods |
@@ -228,3 +230,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 <p align="center">
 Copyright &copy; 2025-present oxidescheme
 </p>
+

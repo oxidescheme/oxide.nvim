@@ -16,7 +16,7 @@ local M = {
 	-- Base16 accent colors (base08-0F)
 	red = "#ff6370", -- base08: Variables, XML Tags, Markup Link Text, Diff Deleted
 	orange = "#ff9500", -- base09: Integers, Boolean, Constants, XML Attributes
-	yellow = "#1aa7ff", -- base0A: Classes, Markup Bold, Search Text Background
+	ocean = "#1aa7ff", -- base0A: Classes, Markup Bold, Search Text Background
 	green = "#42be65", -- base0B: Strings, Inherited Class, Markup Code, Diff Inserted
 	cyan = "#08bdba", -- base0C: Support, Regular Expressions, Escape Characters
 	blue = "#33b1ff", -- base0D: Functions, Methods, Attribute IDs, Headings

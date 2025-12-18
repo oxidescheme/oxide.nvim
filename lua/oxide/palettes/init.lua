@@ -32,7 +32,7 @@ local function create_theme(palette, opts)
 
 		-- Selection and search
 		selection = palette.bg2,
-		search = util.blend(palette.yellow, palette.bg0, 0.3),
+		search = util.blend(palette.ocean, palette.bg0, 0.3),
 
 		-- Cursor and line
 		cursor_line = palette.bg2,
@@ -61,11 +61,12 @@ local function create_theme(palette, opts)
 		number = palette.orange, -- base09: Numbers/Constants
 		boolean = palette.orange, -- base09: Boolean/Constants
 		constant = palette.orange, -- base09: Constants
-		identifier = palette.blue, -- base08: Variables/Identifiers
+		property = palette.blue,
+		identifier = palette.fg1, -- base08: Variables/Identifiers
 		function_name = palette.red, -- base0D: Functions
 		keyword = palette.purple, -- base0E: Keywords
 		operator = palette.fg1, -- base05: Operators
-		type = palette.yellow, -- base0A: Classes/Types
+		type = palette.ocean, -- base0A: Classes/Types
 		preproc = palette.cyan, -- base0C: Preprocessor
 		special = palette.fg0, -- base0F: Special/Deprecated
 		error = palette.red,

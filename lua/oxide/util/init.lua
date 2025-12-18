@@ -44,47 +44,70 @@ function M.highlight(group, opts)
 		return
 	end
 
-	local cmd = "highlight! " .. group
+	-- Handle link-only highlight groups
+	if opts.link then
+		vim.api.nvim_set_hl(0, group, { link = opts.link })
+		return
+	end
 
+	-- Build highlight options for nvim_set_hl
+	local hl_opts = {}
+
+	-- Colors
 	if opts.fg then
-		cmd = cmd .. " guifg=" .. opts.fg
+		hl_opts.fg = opts.fg
 	end
 	if opts.bg then
-		cmd = cmd .. " guibg=" .. opts.bg
+		hl_opts.bg = opts.bg
 	end
 	if opts.sp then
-		cmd = cmd .. " guisp=" .. opts.sp
+		hl_opts.sp = opts.sp
 	end
 
+	-- Styles
 	if opts.style then
-		cmd = cmd .. " gui=" .. opts.style
+		-- Handle comma-separated styles like "bold,italic"
+		local styles = vim.split(opts.style, ",")
+		for _, style in ipairs(styles) do
+			style = vim.trim(style)
+			if style == "bold" then
+				hl_opts.bold = true
+			elseif style == "italic" then
+				hl_opts.italic = true
+			elseif style == "underline" then
+				hl_opts.underline = true
+			elseif style == "undercurl" then
+				hl_opts.undercurl = true
+			elseif style == "strikethrough" then
+				hl_opts.strikethrough = true
+			elseif style == "reverse" then
+				hl_opts.reverse = true
+			end
+		end
 	else
-		local styles = {}
+		-- Handle individual boolean style options
 		if opts.bold then
-			table.insert(styles, "bold")
+			hl_opts.bold = true
 		end
 		if opts.italic then
-			table.insert(styles, "italic")
+			hl_opts.italic = true
 		end
 		if opts.underline then
-			table.insert(styles, "underline")
+			hl_opts.underline = true
 		end
 		if opts.undercurl then
-			table.insert(styles, "undercurl")
+			hl_opts.undercurl = true
 		end
 		if opts.strikethrough then
-			table.insert(styles, "strikethrough")
+			hl_opts.strikethrough = true
 		end
 		if opts.reverse then
-			table.insert(styles, "reverse")
-		end
-
-		if #styles > 0 then
-			cmd = cmd .. " gui=" .. table.concat(styles, ",")
+			hl_opts.reverse = true
 		end
 	end
 
-	vim.cmd(cmd)
+	-- Apply the highlight group using the modern API
+	vim.api.nvim_set_hl(0, group, hl_opts)
 end
 
 -- Apply multiple highlight groups
