@@ -12,7 +12,7 @@ function M.setup(colors, config)
 		SnacksDashboardTitle = { fg = c.text },
 		SnacksDashboardHeader = { fg = c.text },
 		SnacksDashboardFooter = { fg = c.subtext0 },
-		SnacksDashboardKey = { fg = c.subtext1 },
+		SnacksDashboardKey = { fg = c.text, { bold = true } },
 	}
 end
 

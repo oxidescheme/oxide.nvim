@@ -57,11 +57,11 @@ function M.setup(colors, config)
 		LspSignatureActiveParameter = { fg = c.orange, bold = true },
 
 		-- LSP code lens
-		LspCodeLens = { fg = c.overlay1 },
-		LspCodeLensSeparator = { fg = c.subtext1 },
+		LspCodeLens = { fg = c.subtext1 },
+		LspCodeLensSeparator = { fg = c.surface2 },
 
 		-- LSP inlay hints
-		LspInlayHint = { fg = c.overlay1, bg = c.surface0 },
+		LspInlayHint = { fg = c.subtext1, bg = c.surface0 },
 	}
 
 	return highlights

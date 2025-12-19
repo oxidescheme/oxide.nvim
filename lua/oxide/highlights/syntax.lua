@@ -10,7 +10,7 @@ function M.setup(colors, config)
 
 	return {
 		-- Comments
-		Comment = vim.tbl_extend("force", { fg = c.subtext1 }, styles.comments or {}),
+		Comment = vim.tbl_extend("force", { fg = c.surface2 }, styles.comments or {}),
 
 		-- Constants
 		Constant = { fg = c.orange },
@@ -51,7 +51,7 @@ function M.setup(colors, config)
 		SpecialChar = { fg = c.text },
 		Tag = { fg = c.pink },
 		Delimiter = { fg = c.text },
-		SpecialComment = { fg = c.overlay1 },
+		SpecialComment = { fg = c.subtext1 },
 		Debug = { fg = c.pink },
 
 		-- Error
