@@ -33,7 +33,7 @@ Built around clarity and restraint, it uses a deep near-black background, crisp 
 oxide is built on three core principles:
 
 - **Semantic Color**: Every hue has meaning—red for functions, blue for properties, white for variables
-- **Cognitive Clarity**: Reduce mental overhead through consistent, predictable visual patterns  
+- **Cognitive Clarity**: Reduce mental overhead through consistent, predictable visual patterns
 - **Aesthetic Restraint**: Beautiful doesn't mean busy; elegance lies in what's left out
 
 The full design philosophy, color psychology research, and development methodology are documented
@@ -44,7 +44,6 @@ in the [main oxide repository](https://github.com/oxidescheme/oxide).
 - **Dual variants**: Dark and light themes that adapt to any environment
 - **TreeSitter ready**: Full support for modern syntax highlighting  
 - **LSP integrated**: Semantic highlighting that respects language servers
-- **Base16 compliant**: Consistent colors across all your tools
 - **Customizable**: Override colors and highlights to match your workflow
 - **Performance focused**: Lazy-loaded with minimal startup impact
 
@@ -190,14 +189,14 @@ We follow the same philosophy as the main oxide project: minimalism doesn't mean
 - PRs that delete more lines than they add are especially welcome
 - Ensure new highlight groups serve a clear functional purpose
 
+## Credits
+
+**Port Developer:** [@jakubmazur](https://github.com/jakmaz)
+**Current Maintainer:** [@jakubmazur](https://github.com/jakmaz)
+**Contributors:** See [contributors list](https://github.com/oxidescheme/oxide.nvim/graphs/contributors)
+
+**Original oxide colorscheme:** [@originalcreator](https://github.com/oxidescheme)
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
-## Acknowledgments
-
-- **[oxocarbon.nvim](https://github.com/nyoom-engineering/oxocarbon.nvim)**: Inspiration for minimalist design
-
-<p align="center">
-Copyright &copy; 2025-present oxidescheme
-</p>
