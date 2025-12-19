@@ -8,15 +8,13 @@ local M = {
 	mantle = "#191919", -- Sidebars, line numbers
 	surface0 = "#232323", -- Selection background
 	surface1 = "#2a2a2a", -- Subtle backgrounds
-	surface2 = "#363636", -- Borders, separators
-	overlay0 = "#4a4a4a", -- Comments, subtle elements
-	overlay1 = "#5a5a5a", -- Disabled text
-	overlay2 = "#6a6a6a", -- Muted elements
+	overlay0 = "#4a4a4a", -- Comments, borders, subtle elements
 
 	-- Text colors (foregrounds, ordered light to dark)
 	text = "#e0e4e8", -- Primary text
 	subtext1 = "#c8cdd2", -- Secondary text
 	subtext0 = "#b0b5ba", -- Tertiary text
+	overlay1 = "#5a5a5a", -- Muted text
 
 	-- Semantic colors with clear purposes
 	red = "#ff6370", -- Errors, critical items

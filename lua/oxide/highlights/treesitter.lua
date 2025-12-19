@@ -24,13 +24,13 @@ function M.setup(colors, config)
 		["@boolean"] = { link = "Boolean" },
 		["@float"] = { link = "Float" },
 
-		-- Identifiers and variables (your blue variables!)
-		["@variable"] = { fg = c.blue },
-		["@variable.builtin"] = { fg = c.blue },
-		["@variable.parameter"] = { fg = c.blue },
-		["@variable.member"] = { fg = c.blue },
+		-- Identifiers and variables (variables and parameters white, properties blue)
+		["@variable"] = { fg = c.text },
+		["@variable.builtin"] = { fg = c.text },
+		["@variable.parameter"] = { fg = c.text },
+		["@variable.member"] = { fg = c.text },
 		["@property"] = { fg = c.blue },
-		["@field"] = { fg = c.blue },
+		["@field"] = { fg = c.text },
 
 		-- Functions
 		["@function"] = { link = "Function" },
@@ -39,7 +39,7 @@ function M.setup(colors, config)
 		["@function.call"] = { fg = c.red },
 		["@method"] = { fg = c.red },
 		["@method.call"] = { fg = c.red },
-		["@constructor"] = { fg = c.red },
+		["@constructor"] = { fg = c.text },
 
 		-- Keywords
 		["@keyword"] = { link = "Keyword" },
@@ -74,7 +74,7 @@ function M.setup(colors, config)
 		-- Punctuation
 		["@punctuation.delimiter"] = { fg = c.text },
 		["@punctuation.bracket"] = { fg = c.text },
-		["@punctuation.special"] = { fg = c.pink },
+		["@punctuation.special"] = { fg = c.text },
 
 		-- Literals
 		["@string.regex"] = { fg = c.teal },

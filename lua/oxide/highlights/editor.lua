@@ -92,7 +92,7 @@ function M.setup(colors, config)
 		SpecialKey = { fg = c.overlay1 },
 		Whitespace = { fg = c.overlay0 },
 		WildMenu = { fg = c.text, bg = c.surface1 },
-		MatchParen = { fg = c.orange, bold = true },
+		MatchParen = { fg = c.text, bg = c.overlay0, underline = true },
 	}
 end
 

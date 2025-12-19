@@ -22,7 +22,7 @@ function M.setup(opts)
 
 	-- Load semantic colors
 	local colors = load_palette(variant)
-	
+
 	-- Apply transparency if enabled
 	if opts.transparent then
 		colors.base = "NONE"

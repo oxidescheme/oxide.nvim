@@ -20,7 +20,7 @@ function M.setup(colors, config)
 		Boolean = vim.tbl_extend("force", { fg = c.orange }, styles.booleans or {}),
 		Float = { fg = c.orange },
 
-		-- Identifiers (your blue variables!)
+		-- Identifiers (back to blue, variables white)
 		Identifier = vim.tbl_extend("force", { fg = c.blue }, styles.variables or {}),
 		Function = vim.tbl_extend("force", { fg = c.red }, styles.functions or {}),
 
@@ -48,7 +48,7 @@ function M.setup(colors, config)
 
 		-- Special
 		Special = { fg = c.text },
-		SpecialChar = { fg = c.pink },
+		SpecialChar = { fg = c.text },
 		Tag = { fg = c.pink },
 		Delimiter = { fg = c.text },
 		SpecialComment = { fg = c.overlay1 },
@@ -59,10 +59,10 @@ function M.setup(colors, config)
 		Todo = { fg = c.yellow, bold = true },
 
 		-- Added for better syntax support
-		Variable = vim.tbl_extend("force", { fg = c.blue }, styles.variables or {}),
-		Field = { fg = c.blue },
+		Variable = vim.tbl_extend("force", { fg = c.text }, styles.variables or {}),
+		Field = { fg = c.text },
 		Property = { fg = c.blue },
-		Parameter = { fg = c.blue },
+		Parameter = { fg = c.text },
 	}
 end
 

@@ -18,12 +18,12 @@ function M.setup(colors, config)
     ["@lsp.type.macro"] = { link = "@constant.macro" },
     ["@lsp.type.method"] = { link = "@function.method" },
     ["@lsp.type.namespace"] = { link = "@module" },
-    ["@lsp.type.parameter"] = { fg = c.blue },
+    ["@lsp.type.parameter"] = { fg = c.text },
     ["@lsp.type.property"] = { fg = c.blue },
     ["@lsp.type.struct"] = { link = "@type" },
     ["@lsp.type.type"] = { link = "@type" },
     ["@lsp.type.typeParameter"] = { link = "@type" },
-    ["@lsp.type.variable"] = { fg = c.blue },
+    ["@lsp.type.variable"] = { fg = c.text },
 
     -- LSP semantic token modifiers
     ["@lsp.mod.readonly"] = { fg = c.sky },
