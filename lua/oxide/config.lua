@@ -18,7 +18,7 @@ M.defaults = {
 		comments = { italic = true },
 		keywords = { bold = true },
 		variables = {},
-		strings = { italic = true },
+		strings = {},
 		booleans = {},
 		numbers = {},
 	},
@@ -45,4 +45,3 @@ function M.extend(opts)
 end
 
 return M
-

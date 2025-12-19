@@ -115,9 +115,9 @@ require("oxide").setup({
   styles = {
     comments = { italic = true },
     keywords = { bold = true },
-    functions = { bold = true },
+    functions = {},
     variables = {},
-    strings = { italic = true },
+    strings = {},
     booleans = {},
     numbers = {},
   },
