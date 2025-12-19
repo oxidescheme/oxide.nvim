@@ -1,14 +1,12 @@
 <div align="center">
-
-# Nyoom.nvim
+  
+# oxide
 
 </div>
 
 <h6 align="center">
 Where function meets form.
 </h6>
-
-<div align="center">
 
 <p align="center">
   <a href="https://github.com/oxidescheme/oxide.nvim/stargazers"><img src="https://img.shields.io/github/stars/oxidescheme/oxide.nvim?colorA=141414&colorB=33b1ff&style=for-the-badge"></a>
@@ -187,8 +185,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
-- **[oxide](https://github.com/oxidescheme/oxide)**: The main colorscheme project
-- **[base16](https://github.com/chriskempson/base16)**: Color scheme architecture
 - **[oxocarbon.nvim](https://github.com/nyoom-engineering/oxocarbon.nvim)**: Inspiration for minimalist design
 
 <p align="center">
