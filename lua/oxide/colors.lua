@@ -1,5 +1,10 @@
+local config = require("oxide.config")
+
+local M = {}
+
+-- Oxide color palette
 ---@class Palette
-local M = {
+local palette = {
 	-- Surface colors
 	base = "#141414", -- Main background
 	mantle = "#191919", -- Sidebars, line numbers
@@ -28,4 +33,33 @@ local M = {
 	none = "NONE",
 }
 
+---@param opts? table
+---@return table
+function M.setup(opts)
+	opts = config.extend(opts)
+
+	-- Start with base palette
+	local colors = {}
+	for k, v in pairs(palette) do
+		colors[k] = v
+	end
+
+	-- Apply transparency if enabled
+	if opts.transparent then
+		colors.base = "NONE"
+		colors.mantle = "NONE"
+	end
+
+	-- Allow user color overrides
+	if opts.on_colors then
+		colors = opts.on_colors(colors) or colors
+	end
+
+	return {
+		colors = colors,
+		config = opts,
+	}
+end
+
 return M
+

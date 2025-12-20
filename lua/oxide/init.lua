@@ -1,5 +1,5 @@
 local config = require("oxide.config")
-local colors = require("oxide.palettes")
+local colors = require("oxide.colors")
 local highlights = require("oxide.highlights")
 local util = require("oxide.util")
 

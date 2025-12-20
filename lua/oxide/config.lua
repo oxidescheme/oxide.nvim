@@ -1,5 +1,4 @@
 ---@class OxideConfig
----@field variant "dark" | "light" | "auto"
 ---@field transparent boolean
 ---@field terminal_colors boolean
 ---@field styles table<string, any>
@@ -10,7 +9,6 @@ local M = {}
 
 ---@type OxideConfig
 M.defaults = {
-	variant = "auto", -- "dark", "light", "auto" (follows vim.o.background)
 	transparent = false,
 	terminal_colors = true,
 

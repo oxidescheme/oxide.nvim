@@ -2,8 +2,8 @@
 -- MIT license, see LICENSE for more details.
 -- Monochromatic lualine theme that blends seamlessly with oxide colorscheme
 
--- Get oxide palette and configuration
-local palette_setup = require("oxide.palettes").setup()
+-- Get oxide palette and configuration (dark-only)
+local palette_setup = require("oxide.colors").setup()
 local colors = palette_setup.colors
 local config = palette_setup.config
 

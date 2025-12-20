@@ -1,5 +1,5 @@
 <div align="center">
-  
+
 # oxide
 
 </div>
@@ -10,7 +10,7 @@ Where function meets form.
 
 <p align="center">
   <a href="https://github.com/oxidescheme/oxide.nvim/stargazers"><img src="https://img.shields.io/github/stars/oxidescheme/oxide.nvim?colorA=141414&colorB=33b1ff&style=for-the-badge"></a>
-  <a href="https://github.com/oxidescheme/oxide.nvim/releases/latest"><img src="https://img.shields.io/github/v/release/oxidescheme/oxide.nvim?colorA=141414&colorB=42be65&style=for-the-badge"></a>
+  <!-- <a href="https://github.com/oxidescheme/oxide.nvim/releases/latest"><img src="https://img.shields.io/github/v/release/oxidescheme/oxide.nvim?colorA=141414&colorB=42be65&style=for-the-badge"></a> -->
   <a href="https://github.com/oxidescheme/oxide.nvim/issues"><img src="https://img.shields.io/github/issues/oxidescheme/oxide.nvim?colorA=141414&colorB=ff6370&style=for-the-badge"></a>
   <a href="https://www.lua.org/"><img src="https://img.shields.io/badge/Made%20with%20Lua-2C2D72?style=for-the-badge&logo=lua&logoColor=white"></a>
 </p>
@@ -29,7 +29,7 @@ Where function meets form.
 
 <p>
 <b>oxide.nvim</b> brings the oxide colorscheme to Neovim with full TreeSitter and LSP support.
-Built around clarity and restraint, it uses a deep near-black background, crisp white foregrounds, and soft pastel accents to emphasize structure without visual noise.
+A minimalist dark theme built around clarity and restraint, using a deep near-black background, crisp white foregrounds, and soft pastel accents to emphasize structure without visual noise.
 </p>
 
 ## Design Philosophy
@@ -45,11 +45,12 @@ in the [main oxide repository](https://github.com/oxidescheme/oxide).
 
 ## Features
 
-- **Dual variants**: Dark and light themes that adapt to any environment
+- **Dark theme focused**: A carefully crafted monochromatic dark theme
 - **TreeSitter ready**: Full support for modern syntax highlighting  
 - **LSP integrated**: Semantic highlighting that respects language servers
 - **Customizable**: Override colors and highlights to match your workflow
 - **Performance focused**: Lazy-loaded with minimal startup impact
+- **Plugin support**: Built-in lualine theme and growing plugin integration
 
 ## Installation
 
@@ -61,9 +62,7 @@ in the [main oxide repository](https://github.com/oxidescheme/oxide).
   lazy = false,
   priority = 1000,
   config = function()
-    require("oxide").setup({
-      variant = "auto", -- "dark", "light", or "auto"
-    })
+    require("oxide").setup()
     vim.cmd.colorscheme("oxide")
   end,
 }
@@ -104,11 +103,10 @@ require("oxide").load()
 
 ## Configuration
 
-oxide.nvim comes with sensible defaults, but every aspect can be customized. We won't judge if you spend three hours tweaking hex codes anyway.
+oxide.nvim comes with sensible defaults, but every aspect can be customized:
 
 ```lua
 require("oxide").setup({
-  variant = "auto", -- "dark", "light", "auto" (follows vim.o.background)
   transparent = false, -- Enable transparent background
   terminal_colors = true, -- Configure terminal colors
   
@@ -138,7 +136,6 @@ require("oxide").setup({
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `variant` | `"auto"` | Theme variant: `"dark"`, `"light"`, or `"auto"` |
 | `transparent` | `false` | Enable transparent background |
 | `terminal_colors` | `true` | Set terminal colors |
 | `styles` | `{}` | Style overrides for syntax groups |
@@ -146,19 +143,6 @@ require("oxide").setup({
 | `on_highlights` | `nil` | Function to override highlight groups |
 
 ## Advanced Usage
-
-### Manual Theme Switching
-
-```lua
--- Switch to dark variant
-require("oxide").load({ variant = "dark" })
-
--- Switch to light variant  
-require("oxide").load({ variant = "light" })
-
--- Auto-detect based on vim.o.background
-require("oxide").load({ variant = "auto" })
-```
 
 ### Custom Styles
 
@@ -177,20 +161,20 @@ require("oxide").setup({
 
 ### Integration with Other Plugins
 
-oxide.nvim works seamlessly with popular plugins. No extra configuration required, which is a rare treat in the Neovim ecosystem.
+oxide.nvim works seamlessly with popular plugins:
 
-- **[lualine](https://github.com/nvim-lualine/lualine.nvim)**: Built-in oxide theme
+- **[lualine](https://github.com/nvim-lualine/lualine.nvim)**: Built-in monochromatic oxide theme
 - **[nvim-tree](https://github.com/kyazdani42/nvim-tree.lua)**: Properly styled file explorer
 - **[telescope](https://github.com/nvim-telescope/telescope.nvim)**: Clean search interface
 - **[gitsigns](https://github.com/lewis6991/gitsigns.nvim)**: Clear git indicators
-- **[snacks](https://github.com/folke/snacks.nvim)**: Clean and minimal fuzzy picker
+- **[snacks](https://github.com/folke/snacks.nvim)**: Clean and minimal components
 
 ## Contributing
 
-We follow the same philosophy as the main oxide project: minimalism doesn't mean stagnation. Though if you're here to add rainbow unicorn mode, maybe reconsider.
+We follow the same philosophy as the main oxide project: minimalism doesn't mean stagnation.
 
 - Report bugs and request features through [GitHub Issues](https://github.com/oxidescheme/oxide.nvim/issues)
-- PRs that delete more lines than they add are especially welcome
+- PRs that improve clarity and consistency are especially welcome
 - Ensure new highlight groups serve a clear functional purpose
 
 ## Credits
